@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "./Icon";
 import { useCartStore } from "@/lib/store/cart";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/dashboard", icon: "dashboard", label: "Dashboard" },
@@ -21,6 +22,12 @@ const footerItems = [
 export default function SideNav() {
   const pathname = usePathname();
   const cartCount = useCartStore((state) => state.totalItems());
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   return (
     <aside className="hidden md:flex flex-col h-screen w-64 sticky top-0 shrink-0 bg-surface-container-lowest z-40">
@@ -70,7 +77,7 @@ export default function SideNav() {
                   <Icon name={item.icon} filled={isActive} />
                   {item.label}
                 </div>
-                {item.isCart && cartCount > 0 && (
+                {item.isCart && mounted && cartCount > 0 && (
                   <span className="bg-primary text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
                     {cartCount}
                   </span>

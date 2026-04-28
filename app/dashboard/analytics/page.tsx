@@ -112,21 +112,24 @@ export default function AnalyticsPage() {
               <span className="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Weekly</span>
             </div>
           </div>
-          <div className="h-64 flex items-end justify-between gap-4 px-2 relative">
+          <div className="h-64 flex items-end justify-between gap-2 sm:gap-4 px-2 relative">
             {/* Grid lines */}
             <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-5">
-              {[1, 2, 3, 4].map(l => <div key={l} className="w-full h-px bg-on-surface" />)}
+              {[1, 2, 3, 4, 5].map(l => <div key={l} className="w-full h-px bg-on-surface" />)}
             </div>
             {salesData.map((val, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-4 group relative z-10">
+              <div key={i} className="flex-1 flex flex-col items-center gap-3 group relative z-10">
                 <div className="relative w-full flex justify-center items-end h-full">
                   <motion.div
-                    initial={{ height: 0 }}
-                    animate={{ height: isLoaded ? `${Math.max((val / maxSales) * 100, 5)}%` : 0 }}
-                    transition={{ duration: 1, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full max-w-[40px] bg-linear-to-t from-primary to-primary-container rounded-t-xl group-hover:brightness-110 transition-all relative"
+                    initial={{ height: "0%" }}
+                    animate={{ height: isLoaded ? `${Math.max((val / maxSales) * 100, 8)}%` : "0%" }}
+                    transition={{ duration: 1.2, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full max-w-[32px] md:max-w-[40px] bg-primary rounded-t-xl group-hover:brightness-110 transition-all relative"
+                    style={{ 
+                      background: "linear-gradient(to top, var(--color-primary), var(--color-primary-container))" 
+                    }}
                   >
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface-container-lowest text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none whitespace-nowrap">
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface-container-lowest text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none whitespace-nowrap z-30">
                       {val.toLocaleString()} HUF
                     </div>
                   </motion.div>
@@ -151,20 +154,23 @@ export default function AnalyticsPage() {
               <span className="font-label text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Profile Views</span>
             </div>
           </div>
-          <div className="h-64 flex items-end justify-between gap-4 px-2 relative">
+          <div className="h-64 flex items-end justify-between gap-2 sm:gap-4 px-2 relative">
             <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-5">
-              {[1, 2, 3, 4].map(l => <div key={l} className="w-full h-px bg-on-surface" />)}
+              {[1, 2, 3, 4, 5].map(l => <div key={l} className="w-full h-px bg-on-surface" />)}
             </div>
             {engagementData.map((d, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-4 group relative z-10">
+              <div key={i} className="flex-1 flex flex-col items-center gap-3 group relative z-10">
                 <div className="relative w-full flex justify-center items-end h-full">
                   <motion.div
-                    initial={{ height: 0 }}
-                    animate={{ height: isLoaded ? `${Math.max((d.views / maxViews) * 100, 5)}%` : 0 }}
-                    transition={{ duration: 1, delay: i * 0.1 + 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="w-full max-w-[40px] bg-linear-to-t from-secondary to-secondary-container rounded-t-xl group-hover:brightness-110 transition-all relative"
+                    initial={{ height: "0%" }}
+                    animate={{ height: isLoaded ? `${Math.max((d.views / maxViews) * 100, 8)}%` : "0%" }}
+                    transition={{ duration: 1.2, delay: i * 0.1 + 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full max-w-[32px] md:max-w-[40px] bg-secondary rounded-t-xl group-hover:brightness-110 transition-all relative"
+                    style={{ 
+                      background: "linear-gradient(to top, var(--color-secondary), var(--color-secondary-dim))" 
+                    }}
                   >
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface-container-lowest text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none whitespace-nowrap">
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-surface-container-lowest text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow-lg pointer-events-none whitespace-nowrap z-30">
                       {d.views} views
                     </div>
                   </motion.div>

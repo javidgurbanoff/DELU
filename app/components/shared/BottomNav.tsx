@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Icon from "./Icon";
 import { useCartStore } from "@/lib/store/cart";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const tabs = [
   { href: "/dashboard", icon: "grid_view", label: "Hub" },
@@ -17,6 +18,12 @@ const tabs = [
 export default function BottomNav() {
   const pathname = usePathname();
   const cartCount = useCartStore((state) => state.totalItems());
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   return (
     <nav
@@ -50,7 +57,7 @@ export default function BottomNav() {
                 filled={isActive}
                 className="text-[22px] mb-0.5 relative z-10"
               />
-              {tab.isCart && cartCount > 0 && (
+              {tab.isCart && mounted && cartCount > 0 && (
                 <span className="absolute -top-1 -right-1.5 bg-error text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-white z-20">
                   {cartCount}
                 </span>
