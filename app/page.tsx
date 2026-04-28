@@ -6,11 +6,11 @@ import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
 const liveListings = [
-  { title: "Organic Chem Textbook", seller: "Alex C.", price: "15,000", tag: "Book", tagBg: "bg-secondary-container/40 text-on-secondary-container" },
-  { title: "Box Braids & Twists", seller: "Sarah K.", price: "15,000", tag: "Service", tagBg: "bg-primary-container/40 text-on-primary-container" },
-  { title: "Midnight Ramen Kit", seller: "Mark T.", price: "2,900", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container" },
-  { title: "Mini Fridge 43L", seller: "Elena R.", price: "30,000", tag: "Dorm", tagBg: "bg-secondary-container/40 text-on-secondary-container" },
-  { title: "Artisan Sourdough", seller: "Yuki N.", price: "2,200", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container" },
+  { title: "Organic Chem Textbook", seller: "Alex C.", price: "15,000", tag: "Book", tagBg: "bg-secondary-container/40 text-on-secondary-container", image: "/images/listing_textbook.png" },
+  { title: "Box Braids & Twists", seller: "Sarah K.", price: "15,000", tag: "Service", tagBg: "bg-primary-container/40 text-on-primary-container", image: "/images/listing_braids.png" },
+  { title: "Midnight Ramen Kit", seller: "Mark T.", price: "2,900", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container", image: "/images/listing_jollof.png" },
+  { title: "Mini Fridge 43L", seller: "Elena R.", price: "30,000", tag: "Dorm", tagBg: "bg-secondary-container/40 text-on-secondary-container", image: "/images/listing_textbook.png" },
+  { title: "Artisan Sourdough", seller: "Yuki N.", price: "2,200", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container", image: "/images/listing_jollof.png" },
 ];
 
 const voices = [
@@ -160,8 +160,8 @@ export default function Home() {
                 className="shrink-0 flex items-center gap-4 bg-surface-container-lowest rounded-xl p-4 min-w-[280px] hover:bg-surface-container-low transition-colors cursor-pointer group"
                 style={{ border: "1px solid rgba(171,173,175,0.08)" }}
               >
-                <div className="w-11 h-11 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
-                  <Icon name={item.tag === "Food" ? "restaurant" : item.tag === "Service" ? "design_services" : "inventory_2"} size={20} />
+                <div className="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-headline text-sm font-bold text-on-surface truncate">{item.title}</p>
