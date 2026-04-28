@@ -18,7 +18,7 @@ export const services: ServiceItem[] = [
     price: 15000,
     priceUnit: "Starting at",
     currency: "HUF",
-    image: "/mock/braids.jpg",
+    image: "/images/listing_braids.png",
     category: "Hair & Beauty",
     provider: { name: "Sarah K.", avatar: "/mock/avatar-sarah.jpg", verified: true },
     rating: 5.0,
@@ -30,7 +30,7 @@ export const services: ServiceItem[] = [
     price: 5000,
     priceUnit: "/ hr",
     currency: "HUF",
-    image: "/mock/tutoring.jpg",
+    image: "/images/listing_textbook.png",
     category: "Tutoring",
     provider: { name: "Mark T.", avatar: "/mock/avatar-mark.jpg", verified: true },
     rating: 4.9,
@@ -42,13 +42,14 @@ export const services: ServiceItem[] = [
     price: 10000,
     priceUnit: "Fixed Price",
     currency: "HUF",
-    image: "/mock/cleaning.jpg",
+    image: "/images/listing_braids.png",
     category: "Moving & Logistics",
     provider: { name: "CleanTeam", avatar: "", verified: true },
     rating: 4.8,
     reviews: 14,
   },
 ];
+
 
 export const serviceCategories = [
   { label: "Hair & Beauty", icon: "content_cut", active: true },
