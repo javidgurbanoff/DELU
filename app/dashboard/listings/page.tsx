@@ -1,11 +1,8 @@
+"use client";
+
 import Icon from "@/app/components/shared/Icon";
 import Link from "next/link";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "My Listings",
-  description: "Manage your active listings, monitor performance, and update your ADEL catalog.",
-};
 
 const stats = [
   { label: "Total Active Listings", value: "5", trend: "+2 this month", trendUp: true, color: "text-primary" },
