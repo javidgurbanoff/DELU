@@ -35,10 +35,35 @@ const pillars = [
 ];
 
 const trending = [
-  { title: "Organic Chem Textbook", price: "15,000 HUF", tag: "Products", time: "2h ago", image: "/images/listing_textbook.png" },
-  { title: "Box Braids & Twists", price: "15,000 HUF", tag: "Services", time: "4h ago", image: "/images/listing_braids.png" },
-  { title: "Midnight Ramen Kit", price: "2,900 HUF", tag: "Food", time: "1h ago", image: "/images/listing_jollof.png" },
-  { title: "Sony WH-1000XM4", price: "65,000 HUF", tag: "Products", time: "6h ago", image: "/images/listing_textbook.png" },
+  {
+    title: "Organic Chem Textbook",
+    price: "15,000 HUF",
+    tag: "Products",
+    time: "2h ago",
+    image: "/images/listing_textbook.png",
+  },
+  {
+    title: "Box Braids & Twists",
+    price: "15,000 HUF",
+    tag: "Services",
+    time: "4h ago",
+    image: "/images/listing_braids.png",
+  },
+  {
+    title: "Midnight Ramen Kit",
+    price: "2,900 HUF",
+    tag: "Food",
+    time: "1h ago",
+    image: "/images/listing_jollof.png",
+  },
+  {
+    title: "Sony WH-1000XM4",
+    price: "65,000 HUF",
+    tag: "Products",
+    time: "6h ago",
+    image:
+      "https://i.pinimg.com/1200x/02/54/04/025404b18363459c689bfd62edb43d8e.jpg",
+  },
 ];
 
 const containerVariants: Variants = {
@@ -65,7 +90,7 @@ const itemVariants: Variants = {
 
 export default function DashboardPage() {
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -83,12 +108,35 @@ export default function DashboardPage() {
       </motion.section>
 
       {/* Quick Stats */}
-      <motion.section variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <motion.section
+        variants={itemVariants}
+        className="grid grid-cols-2 md:grid-cols-4 gap-4"
+      >
         {[
-          { label: "Active Listings", value: "5", icon: "inventory_2", trend: "+2" },
-          { label: "Unread Messages", value: "4", icon: "mark_email_unread", trend: "" },
-          { label: "Profile Views", value: "1.2k", icon: "visibility", trend: "+8%" },
-          { label: "Wallet Balance", value: "24,500 HUF", icon: "account_balance_wallet", trend: "" },
+          {
+            label: "Active Listings",
+            value: "5",
+            icon: "inventory_2",
+            trend: "+2",
+          },
+          {
+            label: "Unread Messages",
+            value: "4",
+            icon: "mark_email_unread",
+            trend: "",
+          },
+          {
+            label: "Profile Views",
+            value: "1.2k",
+            icon: "visibility",
+            trend: "+8%",
+          },
+          {
+            label: "Wallet Balance",
+            value: "24,500 HUF",
+            icon: "account_balance_wallet",
+            trend: "",
+          },
         ].map((stat) => (
           <div
             key={stat.label}
@@ -99,10 +147,7 @@ export default function DashboardPage() {
               <p className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
                 {stat.label}
               </p>
-              <Icon
-                name={stat.icon}
-                className="text-primary text-lg"
-              />
+              <Icon name={stat.icon} className="text-primary text-lg" />
             </div>
             <div className="flex items-baseline gap-2">
               <span className="font-headline text-2xl font-bold text-on-surface">
@@ -131,7 +176,11 @@ export default function DashboardPage() {
               className="group bg-surface-container-lowest rounded-2xl p-6 hover:translate-y-[-4px] transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-md h-full flex flex-col"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
-                <img src={pillar.image} alt="" className="w-full h-full object-cover" />
+                <img
+                  src={pillar.image}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors duration-500" />
               <div
@@ -179,10 +228,14 @@ export default function DashboardPage() {
             >
               <div className="flex items-center gap-4">
                 <span className="font-headline font-bold text-outline-variant text-sm w-6 text-center">
-                  {String(i + 1).padStart(2, '0')}
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="w-10 h-10 rounded-lg overflow-hidden bg-surface-container shrink-0">
-                  <img src={item.image} alt="" className="w-full h-full object-cover" />
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="font-headline text-sm font-bold text-on-surface">

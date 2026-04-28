@@ -3,33 +3,34 @@
 import Link from "next/link";
 import Icon from "@/app/components/shared/Icon";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <main
-      className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row bg-surface-container-lowest rounded-3xl overflow-hidden min-h-[700px] relative z-10"
-      style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.04)" }}
+      className="w-full max-w-6xl mx-auto flex flex-col lg:flex-row bg-white rounded-3xl overflow-hidden min-h-[700px] relative z-10"
+      style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}
     >
       {/* Left Side: Editorial Panel */}
       <div className="relative hidden w-full overflow-hidden lg:block lg:w-1/2 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#10B981]">
         <div className="absolute inset-0">
           <img
             src="https://i.pinimg.com/1200x/a9/c0/ba/a9c0ba00401f2bb5f1e514310261c097.jpg"
-            alt="Campus life"
+            alt="Student marketplace"
             className="h-full w-full object-cover"
           />
         </div>
+
         <div className="absolute inset-0 bg-[#0F172A]/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-[#10B981]/20" />
+
         <div className="relative z-10 flex h-full flex-col justify-end p-12">
           <div className="rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
             <h2 className="mb-4 text-3xl font-bold text-white">
-              Curate Your Campus Life.
+              Built for verified students.
             </h2>
 
             <p className="mb-6 text-lg leading-relaxed text-slate-200">
-              Join the premier marketplace exclusive to verified students.
-              Discover, trade, and connect within a trusted ecosystem designed
-              for your university journey.
+              Textbooks, home-cooked food, tutoring sessions — everything
+              students actually need, sold by students you can actually trust.
             </p>
 
             <div className="grid grid-cols-2 gap-6 border-t border-white/20 pt-6">
@@ -48,17 +49,15 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
-      {/* Right Side: Login Form */}
-      <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-12 lg:p-16 relative bg-surface-container-lowest">
+      {/* Right Side: Login Form */}{" "}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center p-8 sm:p-12 lg:p-16 bg-white">
         <div className="max-w-md w-full mx-auto">
-          {/* Brand Header */}
-          <div className="mb-10 text-center lg:text-left">
-            <h1 className="font-headline text-4xl sm:text-5xl font-extrabold tracking-tight text-primary mb-3">
-              DELU
+          <div className="mb-8 text-center lg:text-left">
+            <h1 className="text-4xl text-primary sm:text-5xl font-extrabold tracking-tight text-[#0F172A] mb-3">
+              Join DELU
             </h1>
-            <p className="font-headline text-xl text-on-surface-variant font-medium">
-              Your Verified Campus Ecosystem
+            <p className="text-lg text-slate-600 font-medium">
+              Create your verified student account
             </p>
           </div>
 
@@ -80,34 +79,59 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Login Form */}
           <form
-            className="space-y-6"
+            className="space-y-5"
             onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = "/auth/login/password";
+              window.location.href = "/auth/login";
             }}
           >
             <div>
-              <label
-                className="block font-body text-sm font-medium text-on-surface mb-2"
-                htmlFor="email-input"
-              >
+              <label className="block text-sm font-medium text-[#0F172A] mb-2">
+                Full Name
+              </label>
+              <input
+                type="text"
+                placeholder="Name Surname"
+                required
+                className="w-full px-4 py-4 bg-slate-50 rounded-xl text-[#0F172A] focus:ring-2 focus:ring-[#10B981]/30 transition-all placeholder:text-slate-400 border border-slate-200 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#0F172A] mb-2">
                 University Email
               </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Icon name="mail" className="text-outline" />
-                </div>
-                <input
-                  id="email-input"
-                  type="email"
-                  name="email"
-                  placeholder="student@university.edu"
-                  required
-                  className="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl font-body text-on-surface focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all placeholder:text-outline border-none outline-none"
-                />
-              </div>
+              <input
+                type="email"
+                placeholder="student@university.edu"
+                required
+                className="w-full px-4 py-4 bg-slate-50 rounded-xl text-[#0F172A] focus:ring-2 focus:ring-[#10B981]/30 transition-all placeholder:text-slate-400 border border-slate-200 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#0F172A] mb-2">
+                University
+              </label>
+              <input
+                type="text"
+                placeholder="Your university name"
+                required
+                className="w-full px-4 py-4 bg-slate-50 rounded-xl text-[#0F172A] focus:ring-2 focus:ring-[#10B981]/30 transition-all placeholder:text-slate-400 border border-slate-200 outline-none"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-[#0F172A] mb-2">
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="Create a secure password"
+                required
+                className="w-full px-4 py-4 bg-slate-50 rounded-xl text-[#0F172A] focus:ring-2 focus:ring-[#10B981]/30 transition-all placeholder:text-slate-400 border border-slate-200 outline-none"
+              />
             </div>
 
             <button
@@ -115,28 +139,27 @@ export default function LoginPage() {
               className="w-full py-4 px-6 rounded-full bg-linear-to-r from-primary to-primary-dim text-white font-headline font-semibold text-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
               style={{ boxShadow: "0 4px 14px rgba(0,105,71,0.2)" }}
             >
-              Sign in with University Email
+              Create verified account
               <Icon name="arrow_forward" className="text-white" />
             </button>
           </form>
 
-          {/* Divider */}
           <div className="mt-8 mb-8 flex items-center justify-center gap-4">
             <div className="h-px bg-surface-container-high flex-1" />
             <span className="font-body text-sm text-outline font-medium">
-              New to DELU?
+              Already verified?
             </span>
             <div className="h-px bg-surface-container-high flex-1" />
           </div>
 
           {/* Secondary Action */}
           <Link
-            href="/auth/register"
+            href="/auth/login"
             className="inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-surface-container-low text-on-surface font-headline font-medium hover:bg-surface-container transition-colors w-full"
             style={{ border: "1px solid rgba(171,173,175,0.15)" }}
           >
-            <Icon name="school" className="text-on-surface-variant" />
-            Apply for Verification
+            <Icon name="login" className="text-slate-500" />
+            Sign in instead
           </Link>
 
           {/* Footer Links */}

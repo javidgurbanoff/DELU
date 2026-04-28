@@ -6,17 +6,68 @@ import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
 const liveListings = [
-  { title: "Organic Chem Textbook", seller: "Alex C.", price: "15,000", tag: "Book", tagBg: "bg-secondary-container/40 text-on-secondary-container", image: "/images/listing_textbook.png" },
-  { title: "Box Braids & Twists", seller: "Sarah K.", price: "15,000", tag: "Service", tagBg: "bg-primary-container/40 text-on-primary-container", image: "/images/listing_braids.png" },
-  { title: "Midnight Ramen Kit", seller: "Mark T.", price: "2,900", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container", image: "/images/listing_jollof.png" },
-  { title: "Mini Fridge 43L", seller: "Elena R.", price: "30,000", tag: "Dorm", tagBg: "bg-secondary-container/40 text-on-secondary-container", image: "/images/listing_textbook.png" },
-  { title: "Artisan Sourdough", seller: "Yuki N.", price: "2,200", tag: "Food", tagBg: "bg-tertiary-container/40 text-on-tertiary-container", image: "/images/listing_jollof.png" },
+  {
+    title: "Organic Chem Textbook",
+    seller: "Alex C.",
+    price: "15,000",
+    tag: "Book",
+    tagBg: "bg-secondary-container/40 text-on-secondary-container",
+    image: "/images/listing_textbook.png",
+  },
+  {
+    title: "Box Braids & Twists",
+    seller: "Sarah K.",
+    price: "15,000",
+    tag: "Service",
+    tagBg: "bg-primary-container/40 text-on-primary-container",
+    image: "/images/listing_braids.png",
+  },
+  {
+    title: "Midnight Ramen Kit",
+    seller: "Mark T.",
+    price: "2,900",
+    tag: "Food",
+    tagBg: "bg-tertiary-container/40 text-on-tertiary-container",
+    image: "/images/listing_jollof.png",
+  },
+  {
+    title: "Mini Fridge 43L",
+    seller: "Elena R.",
+    price: "30,000",
+    tag: "Dorm",
+    tagBg: "bg-secondary-container/40 text-on-secondary-container",
+    image:
+      "https://i.pinimg.com/736x/5c/ec/b6/5cecb6155a56eb0eeb01c7defd0dc9bc.jpg",
+  },
+  {
+    title: "Artisan Sourdough",
+    seller: "Yuki N.",
+    price: "2,200",
+    tag: "Food",
+    tagBg: "bg-tertiary-container/40 text-on-tertiary-container",
+    image: "/images/listing_jollof.png",
+  },
 ];
 
 const voices = [
-  { quote: "Sold my textbooks in 2 hours. Couldn't believe it.", name: "Boglárka P.", context: "BME, Computer Science", icon: "local_mall" },
-  { quote: "Found a jollof rice plug on campus. Life. Changed.", name: "Ade O.", context: "ELTE, Biology", icon: "restaurant" },
-  { quote: "Got my braids done for half the salon price. By a student!", name: "Chioma A.", context: "Corvinus, Business", icon: "content_cut" },
+  {
+    quote: "Sold my textbooks in 2 hours. Couldn't believe it.",
+    name: "Boglárka P.",
+    context: "BME, Computer Science",
+    icon: "local_mall",
+  },
+  {
+    quote: "Found a jollof rice plug on campus. Life. Changed.",
+    name: "Ade O.",
+    context: "ELTE, Biology",
+    icon: "restaurant",
+  },
+  {
+    quote: "Got my braids done for half the salon price. By a student!",
+    name: "Chioma A.",
+    context: "Corvinus, Business",
+    icon: "content_cut",
+  },
 ];
 
 const containerVariants: Variants = {
@@ -48,21 +99,30 @@ export default function Home() {
     <main className="min-h-screen flex flex-col bg-background overflow-hidden">
       {/* ─── Minimal Header ─── */}
       <header className="fixed top-0 w-full z-50">
-        <motion.div 
+        <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="glass-panel"
         >
           <div className="max-w-[1200px] mx-auto px-6 h-14 flex justify-between items-center">
-            <Link href="/" className="font-headline text-xl font-black tracking-tighter text-on-surface">
-              adel<span className="text-primary">.</span>
+            <Link
+              href="/"
+              className="font-headline text-xl font-black tracking-tighter text-on-surface"
+            >
+              DELU<span className="text-primary">.</span>
             </Link>
             <div className="flex items-center gap-6">
-              <Link href="/marketplace/products" className="hidden md:inline font-body text-[13px] font-medium text-on-surface-variant hover:text-on-surface transition-colors">
+              <Link
+                href="/marketplace/products"
+                className="hidden md:inline font-body text-[13px] font-medium text-on-surface-variant hover:text-on-surface transition-colors"
+              >
                 Browse
               </Link>
-              <Link href="/auth/login" className="font-body text-[13px] font-medium text-on-surface-variant hover:text-on-surface transition-colors">
+              <Link
+                href="/auth/login"
+                className="font-body text-[13px] font-medium text-on-surface-variant hover:text-on-surface transition-colors"
+              >
                 Sign in
               </Link>
               <Link
@@ -80,32 +140,46 @@ export default function Home() {
       <section className="pt-28 md:pt-36 pb-16 md:pb-24 px-6 relative">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-linear-to-b from-primary-container/10 via-transparent to-transparent rounded-full blur-[80px] pointer-events-none" />
 
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           className="max-w-[1200px] mx-auto relative z-10"
         >
           {/* Eyebrow */}
-          <motion.p variants={itemVariants} className="font-label text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6 md:mb-8">
+          <motion.p
+            variants={itemVariants}
+            className="font-label text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-6 md:mb-8"
+          >
             Campus Marketplace — Budapest &apos;26
           </motion.p>
 
           {/* Headline */}
-          <motion.h1 variants={itemVariants} className="font-headline text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold tracking-tight text-on-surface leading-[1.05] mb-6 max-w-3xl">
-            Stop overpaying.<br />
-            Start trading with<br />
+          <motion.h1
+            variants={itemVariants}
+            className="font-headline text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold tracking-tight text-on-surface leading-[1.05] mb-6 max-w-3xl"
+          >
+            Stop overpaying.
+            <br />
+            Start trading with
+            <br />
             <span className="text-primary">your campus.</span>
           </motion.h1>
 
           {/* Subline */}
-          <motion.p variants={itemVariants} className="font-body text-lg text-on-surface-variant max-w-lg leading-relaxed mb-10">
+          <motion.p
+            variants={itemVariants}
+            className="font-body text-lg text-on-surface-variant max-w-lg leading-relaxed mb-10"
+          >
             Textbooks, home-cooked food, tutoring sessions — everything students
             actually need, sold by students you can actually trust.
           </motion.p>
 
           {/* Inline email capture */}
-          <motion.div variants={itemVariants} className={`flex flex-col sm:flex-row gap-3 max-w-md transition-all duration-300 ${emailFocused ? "scale-[1.01]" : ""}`}>
+          <motion.div
+            variants={itemVariants}
+            className={`flex flex-col sm:flex-row gap-3 max-w-md transition-all duration-300 ${emailFocused ? "scale-[1.01]" : ""}`}
+          >
             <div className="flex-1 relative">
               <input
                 type="email"
@@ -127,20 +201,26 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          <motion.p variants={itemVariants} className="font-body text-xs text-outline mt-3">
+          <motion.p
+            variants={itemVariants}
+            className="font-body text-xs text-outline mt-3"
+          >
             Free for students. We verify via your .edu or institution email.
           </motion.p>
         </motion.div>
       </section>
 
       {/* ─── Live Feed Strip ─── */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="py-8 relative overflow-hidden" 
-        style={{ borderTop: "1px solid rgba(171,173,175,0.12)", borderBottom: "1px solid rgba(171,173,175,0.12)" }}
+        className="py-8 relative overflow-hidden"
+        style={{
+          borderTop: "1px solid rgba(171,173,175,0.12)",
+          borderBottom: "1px solid rgba(171,173,175,0.12)",
+        }}
       >
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center gap-4 mb-5">
@@ -161,15 +241,27 @@ export default function Home() {
                 style={{ border: "1px solid rgba(171,173,175,0.08)" }}
               >
                 <div className="w-11 h-11 rounded-lg bg-surface-container overflow-hidden shrink-0">
-                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-headline text-sm font-bold text-on-surface truncate">{item.title}</p>
-                  <p className="font-body text-xs text-on-surface-variant">{item.seller}</p>
+                  <p className="font-headline text-sm font-bold text-on-surface truncate">
+                    {item.title}
+                  </p>
+                  <p className="font-body text-xs text-on-surface-variant">
+                    {item.seller}
+                  </p>
                 </div>
                 <div className="text-right shrink-0">
-                  <p className="font-headline text-sm font-bold text-on-surface">{item.price}</p>
-                  <span className={`text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded ${item.tagBg}`}>
+                  <p className="font-headline text-sm font-bold text-on-surface">
+                    {item.price}
+                  </p>
+                  <span
+                    className={`text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded ${item.tagBg}`}
+                  >
                     {item.tag}
                   </span>
                 </div>
@@ -182,7 +274,7 @@ export default function Home() {
       {/* ─── Three Columns: The Offer ─── */}
       <section className="py-20 md:py-28 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -190,16 +282,18 @@ export default function Home() {
           >
             How it works
           </motion.p>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-on-surface mb-16 max-w-lg leading-tight"
           >
-            One platform.<br />Three ways to thrive.
+            One platform.
+            <br />
+            Three ways to thrive.
           </motion.h2>
 
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
@@ -236,12 +330,18 @@ export default function Home() {
                 key={col.num}
                 variants={itemVariants}
                 className={`p-8 md:p-10 ${i < 2 ? "md:border-r" : ""}`}
-                style={i < 2 ? { borderColor: "rgba(171,173,175,0.12)" } : undefined}
+                style={
+                  i < 2 ? { borderColor: "rgba(171,173,175,0.12)" } : undefined
+                }
               >
-                <div className={`w-12 h-12 rounded-xl ${col.accentBg} flex items-center justify-center ${col.accent} mb-6 transition-transform group-hover:scale-110`}>
+                <div
+                  className={`w-12 h-12 rounded-xl ${col.accentBg} flex items-center justify-center ${col.accent} mb-6 transition-transform group-hover:scale-110`}
+                >
                   <Icon name={col.icon} size={22} />
                 </div>
-                <p className={`font-headline text-xs font-bold uppercase tracking-[0.15em] ${col.accent} mb-3`}>
+                <p
+                  className={`font-headline text-xs font-bold uppercase tracking-[0.15em] ${col.accent} mb-3`}
+                >
                   {col.num}
                 </p>
                 <h3 className="font-headline text-xl font-bold text-on-surface mb-3">
@@ -257,14 +357,17 @@ export default function Home() {
       </section>
 
       {/* ─── Social Proof: Student Voices ─── */}
-      <section className="py-16 px-6 bg-surface-container-lowest" style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}>
+      <section
+        className="py-16 px-6 bg-surface-container-lowest"
+        style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}
+      >
         <div className="max-w-[1200px] mx-auto">
           <p className="font-label text-[11px] font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-12">
             From the community
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {voices.map((v, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -273,14 +376,22 @@ export default function Home() {
                 className="flex flex-col"
               >
                 <div className="mb-6">
-                  <Icon name={v.icon} size={24} className="text-outline-variant" />
+                  <Icon
+                    name={v.icon}
+                    size={24}
+                    className="text-outline-variant"
+                  />
                 </div>
                 <blockquote className="font-headline text-lg md:text-xl font-bold text-on-surface leading-snug mb-6 flex-1 italic">
                   &ldquo;{v.quote}&rdquo;
                 </blockquote>
                 <div>
-                  <p className="font-headline text-sm font-bold text-on-surface">{v.name}</p>
-                  <p className="font-body text-xs text-on-surface-variant">{v.context}</p>
+                  <p className="font-headline text-sm font-bold text-on-surface">
+                    {v.name}
+                  </p>
+                  <p className="font-body text-xs text-on-surface-variant">
+                    {v.context}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -289,9 +400,12 @@ export default function Home() {
       </section>
 
       {/* ─── Trust Strip ─── */}
-      <section className="py-16 px-6" style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}>
+      <section
+        className="py-16 px-6"
+        style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}
+      >
         <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -301,8 +415,8 @@ export default function Home() {
               Verified students only.
             </h2>
             <p className="font-body text-on-surface-variant max-w-md leading-relaxed">
-              Every account is tied to a real university email. No bots, no strangers,
-              no anonymous accounts. Your campus, your rules.
+              Every account is tied to a real university email. No bots, no
+              strangers, no anonymous accounts. Your campus, your rules.
             </p>
           </motion.div>
           <div className="flex gap-6 md:gap-10">
@@ -311,7 +425,7 @@ export default function Home() {
               { value: "120", label: "Universities" },
               { value: "4.9", label: "Rating" },
             ].map((s, i) => (
-              <motion.div 
+              <motion.div
                 key={s.label}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -319,8 +433,12 @@ export default function Home() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="text-center md:text-left"
               >
-                <p className="font-headline text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">{s.value}</p>
-                <p className="font-body text-[10px] text-on-surface-variant mt-1 uppercase tracking-widest font-bold">{s.label}</p>
+                <p className="font-headline text-3xl md:text-4xl font-extrabold text-on-surface tracking-tight">
+                  {s.value}
+                </p>
+                <p className="font-body text-[10px] text-on-surface-variant mt-1 uppercase tracking-widest font-bold">
+                  {s.label}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -328,8 +446,11 @@ export default function Home() {
       </section>
 
       {/* ─── Final CTA ─── */}
-      <section className="py-24 px-6 text-center relative" style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}>
-        <motion.div 
+      <section
+        className="py-24 px-6 text-center relative"
+        style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}
+      >
+        <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -337,7 +458,9 @@ export default function Home() {
           className="max-w-[1200px] mx-auto"
         >
           <h2 className="font-headline text-3xl md:text-5xl font-extrabold tracking-tight text-on-surface leading-tight mb-6">
-            Your campus has<br />everything you need.
+            Your campus has
+            <br />
+            everything you need.
           </h2>
           <p className="font-body text-on-surface-variant text-lg mb-10 max-w-md mx-auto">
             You just haven&apos;t found it yet.
@@ -352,15 +475,34 @@ export default function Home() {
       </section>
 
       {/* ─── Footer: Minimal ─── */}
-      <footer className="py-8 px-6" style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}>
+      <footer
+        className="py-8 px-6"
+        style={{ borderTop: "1px solid rgba(171,173,175,0.12)" }}
+      >
         <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="font-body text-[11px] text-outline">
-            © 2026 adel<span className="text-primary">.</span> Built for students, by students.
+            © 2026 adel<span className="text-primary">.</span> Built for
+            students, by students.
           </p>
           <div className="flex gap-6 text-[11px] text-outline font-body font-medium">
-            <Link href="/privacy" className="hover:text-on-surface transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-on-surface transition-colors">Terms</Link>
-            <Link href="/help" className="hover:text-on-surface transition-colors">Help</Link>
+            <Link
+              href="/privacy"
+              className="hover:text-on-surface transition-colors"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="hover:text-on-surface transition-colors"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/help"
+              className="hover:text-on-surface transition-colors"
+            >
+              Help
+            </Link>
           </div>
         </div>
       </footer>
