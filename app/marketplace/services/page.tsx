@@ -22,7 +22,7 @@ export default function ServicesMarketplacePage() {
         </div>
         <Link
           href="/sell/new"
-          className="shrink-0 inline-flex items-center gap-2 py-3 px-6 rounded-full bg-gradient-to-r from-primary to-primary-dim text-white font-headline font-semibold hover:brightness-110 active:scale-[0.98] transition-all"
+          className="shrink-0 inline-flex items-center gap-2 py-3 px-6 rounded-full bg-linear-to-r from-primary to-primary-dim text-white font-headline font-semibold hover:brightness-110 active:scale-[0.98] transition-all"
           style={{ boxShadow: "0 4px 14px rgba(0,105,71,0.2)" }}
         >
           <Icon name="add" size={20} />
@@ -57,7 +57,7 @@ export default function ServicesMarketplacePage() {
               className="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:translate-y-[-2px] transition-all duration-300 flex flex-col"
             >
               <div className="h-48 relative bg-surface-container overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-primary/5 to-primary-container/10 flex items-center justify-center text-primary">
+                <div className="w-full h-full bg-linear-to-br from-primary/5 to-primary-container/10 flex items-center justify-center text-primary">
                   <Icon name="design_services" size={48} className="opacity-15 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="absolute top-3 left-3">
