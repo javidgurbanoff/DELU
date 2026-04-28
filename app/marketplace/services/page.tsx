@@ -1,11 +1,9 @@
+"use client";
+
 import Icon from "@/app/components/shared/Icon";
 import Link from "next/link";
 import { services, serviceCategories } from "@/lib/mock/services";
 
-export const metadata = {
-  title: "Services Marketplace",
-  description: "Book peer-powered services — tutoring, hair styling, cleaning, and more from verified ADEL students.",
-};
 
 export default function ServicesMarketplacePage() {
   return (
