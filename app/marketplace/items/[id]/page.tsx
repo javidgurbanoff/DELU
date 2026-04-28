@@ -1,17 +1,19 @@
+"use client";
+
 import Icon from "@/app/components/shared/Icon";
+import { useCartStore } from "@/lib/store/cart";
+import { useToastStore } from "@/lib/store/toast";
 import Link from "next/link";
+import { use } from "react";
 
-export const metadata = {
-  title: "Item Detail",
-  description: "View details, seller info, and make an offer on ADEL marketplace.",
-};
-
-export default async function ItemDetailPage({
+export default function ItemDetailPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await params;
+  const { id } = use(params);
+  const addItem = useCartStore((state) => state.addItem);
+  const addToast = useToastStore((state) => state.addToast);
 
   // Mock data for any item
   const item = {
@@ -22,6 +24,7 @@ export default async function ItemDetailPage({
     description: "Spicy, smoky, and deeply flavorful. Served with fried plantains and marinated chicken. Made with fresh ingredients sourced locally.",
     category: "Food & Drink",
     condition: "Fresh",
+    image: "",
     seller: {
       name: "Amina S.",
       rating: 4.9,
@@ -33,6 +36,20 @@ export default async function ItemDetailPage({
     tags: ["African", "Spicy", "Halal"],
     views: 342,
     favorites: 18,
+  };
+
+  const handleAddToCart = () => {
+    addItem({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      currency: item.currency,
+      image: item.image,
+      category: item.category,
+      seller: item.seller.name,
+      fulfillment: "pickup",
+    });
+    addToast(`Added ${item.title} to cart`);
   };
 
   return (
@@ -144,18 +161,21 @@ export default async function ItemDetailPage({
 
           {/* Action Buttons */}
           <div className="space-y-3 pt-2">
-            <Link
-              href="/cart"
+            <button
+              onClick={handleAddToCart}
               className="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-dim text-white font-headline font-semibold text-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               style={{ boxShadow: "0 4px 14px rgba(0,105,71,0.2)" }}
             >
               <Icon name="shopping_cart" />
               Add to Cart
-            </Link>
-            <button className="w-full py-4 rounded-full bg-secondary-container text-on-secondary-container font-headline font-semibold text-lg hover:brightness-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+            </button>
+            <Link
+              href="/dashboard/inbox"
+              className="w-full py-4 rounded-full bg-secondary-container text-on-secondary-container font-headline font-semibold text-lg hover:brightness-95 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
               <Icon name="chat" />
               Message Seller
-            </button>
+            </Link>
           </div>
         </div>
       </div>

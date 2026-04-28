@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   ],
 };
 
+import ToastProvider from "./components/shared/ToastProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,6 +53,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased bg-background text-on-background">
+        <ToastProvider />
         {children}
       </body>
     </html>
