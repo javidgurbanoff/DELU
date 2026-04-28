@@ -12,6 +12,7 @@ const pillars = [
     color: "bg-secondary-container/30 text-secondary",
     href: "/marketplace/products",
     count: "2.4k listings",
+    image: "/images/listing_textbook.png",
   },
   {
     title: "Services",
@@ -20,6 +21,7 @@ const pillars = [
     color: "bg-primary-container/30 text-primary",
     href: "/marketplace/services",
     count: "860 providers",
+    image: "/images/listing_braids.png",
   },
   {
     title: "Food",
@@ -28,14 +30,15 @@ const pillars = [
     color: "bg-tertiary-container/30 text-tertiary",
     href: "/marketplace/food",
     count: "320 dishes",
+    image: "/images/listing_jollof.png",
   },
 ];
 
 const trending = [
-  { title: "Organic Chem Textbook", price: "15,000 HUF", tag: "Products", time: "2h ago" },
-  { title: "Box Braids & Twists", price: "15,000 HUF", tag: "Services", time: "4h ago" },
-  { title: "Midnight Ramen Kit", price: "2,900 HUF", tag: "Food", time: "1h ago" },
-  { title: "Sony WH-1000XM4", price: "65,000 HUF", tag: "Products", time: "6h ago" },
+  { title: "Organic Chem Textbook", price: "15,000 HUF", tag: "Products", time: "2h ago", image: "/images/listing_textbook.png" },
+  { title: "Box Braids & Twists", price: "15,000 HUF", tag: "Services", time: "4h ago", image: "/images/listing_braids.png" },
+  { title: "Midnight Ramen Kit", price: "2,900 HUF", tag: "Food", time: "1h ago", image: "/images/listing_jollof.png" },
+  { title: "Sony WH-1000XM4", price: "65,000 HUF", tag: "Products", time: "6h ago", image: "/images/listing_textbook.png" },
 ];
 
 const containerVariants: Variants = {
@@ -125,11 +128,14 @@ export default function DashboardPage() {
             <Link
               key={pillar.href}
               href={pillar.href}
-              className="group bg-surface-container-lowest rounded-2xl p-6 hover:translate-y-[-4px] transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-md"
+              className="group bg-surface-container-lowest rounded-2xl p-6 hover:translate-y-[-4px] transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-md h-full flex flex-col"
             >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+                <img src={pillar.image} alt="" className="w-full h-full object-cover" />
+              </div>
               <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors duration-500" />
               <div
-                className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110 ${pillar.color}`}
+                className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-transform group-hover:scale-110 relative z-10 ${pillar.color}`}
               >
                 <Icon name={pillar.icon} className="text-2xl" />
               </div>
@@ -175,6 +181,9 @@ export default function DashboardPage() {
                 <span className="font-headline font-bold text-outline-variant text-sm w-6 text-center">
                   {String(i + 1).padStart(2, '0')}
                 </span>
+                <div className="w-10 h-10 rounded-lg overflow-hidden bg-surface-container shrink-0">
+                  <img src={item.image} alt="" className="w-full h-full object-cover" />
+                </div>
                 <div>
                   <p className="font-headline text-sm font-bold text-on-surface">
                     {item.title}
