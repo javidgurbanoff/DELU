@@ -27,7 +27,7 @@ export default function TopNav() {
           href="/"
           className="text-2xl font-black tracking-tight text-primary font-headline"
         >
-          ADEL
+          DELU
         </Link>
         <div className="flex items-center gap-4">
           <Link

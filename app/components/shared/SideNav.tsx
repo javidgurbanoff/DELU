@@ -28,7 +28,6 @@ export default function SideNav() {
     setMounted(true);
   }, []);
 
-
   return (
     <aside className="hidden md:flex flex-col h-screen w-64 sticky top-0 shrink-0 bg-surface-container-lowest z-40">
       <div className="flex flex-col gap-2 p-4 h-full">
@@ -37,7 +36,7 @@ export default function SideNav() {
           href="/"
           className="text-2xl font-black tracking-tight text-primary p-4 font-headline mb-2"
         >
-          adel<span className="text-on-surface">.</span>
+          delu<span className="text-on-surface">.</span>
         </Link>
 
         {/* User Card */}
@@ -62,7 +61,7 @@ export default function SideNav() {
             const isActive =
               pathname === item.href ||
               (item.href !== "/dashboard" && pathname.startsWith(item.href));
-            
+
             return (
               <Link
                 key={item.href}
