@@ -63,9 +63,7 @@ export default function FoodMarketplacePage() {
                     Featured Today
                   </span>
                 </div>
-                <div className="w-full h-full bg-linear-to-br from-tertiary/20 to-tertiary-container/20 flex items-center justify-center text-tertiary">
-                  <Icon name="restaurant" size={64} className="opacity-30" />
-                </div>
+                <img src={featured.image} alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
                 <div className="flex flex-wrap gap-2 mb-3">
@@ -122,9 +120,7 @@ export default function FoodMarketplacePage() {
               className="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:translate-y-[-2px] transition-all duration-300"
             >
               <div className="h-44 relative bg-surface-container overflow-hidden">
-                <div className="w-full h-full bg-linear-to-br from-tertiary/10 to-tertiary-container/10 flex items-center justify-center text-tertiary">
-                  <Icon name="restaurant" size={48} className="opacity-20 group-hover:scale-110 transition-transform duration-500" />
-                </div>
+                <img src={food.image} alt={food.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-3 right-3">
                   <span className="bg-surface/80 backdrop-blur-sm text-tertiary text-xs font-bold px-2 py-1 rounded-full">
                     {food.availability}
