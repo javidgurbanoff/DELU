@@ -1,11 +1,17 @@
 "use client";
 
-import Link from "next/link";
-import Icon from "./Icon";
 import { useCartStore } from "@/lib/store/cart";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import Icon from "./Icon";
 
 export default function TopNav() {
   const cartCount = useCartStore((state) => state.totalItems());
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header
@@ -29,7 +35,7 @@ export default function TopNav() {
             className="relative text-primary hover:text-primary-dim transition-colors active:scale-95"
           >
             <Icon name="shopping_cart" />
-            {cartCount > 0 && (
+            {mounted && cartCount > 0 && (
               <span className="absolute -top-1.5 -right-1.5 bg-error text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border-2 border-white">
                 {cartCount}
               </span>
