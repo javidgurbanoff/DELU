@@ -18,7 +18,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "ADEL — Campus Marketplace for Verified Students",
+    default: "DELU — Campus Marketplace for Verified Students",
     template: "%s | ADEL",
   },
   description:
