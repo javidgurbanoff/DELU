@@ -55,9 +55,7 @@ export default function ServicesMarketplacePage() {
               className="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:translate-y-[-2px] transition-all duration-300 flex flex-col"
             >
               <div className="h-48 relative bg-surface-container overflow-hidden">
-                <div className="w-full h-full bg-linear-to-br from-primary/5 to-primary-container/10 flex items-center justify-center text-primary">
-                  <Icon name="design_services" size={48} className="opacity-15 group-hover:scale-110 transition-transform duration-500" />
-                </div>
+                <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute top-3 left-3">
                   <span className="bg-surface/80 backdrop-blur-sm text-on-surface text-xs font-semibold px-3 py-1 rounded-full">
                     {service.category}
