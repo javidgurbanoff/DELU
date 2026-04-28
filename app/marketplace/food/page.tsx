@@ -24,7 +24,7 @@ export default function FoodMarketplacePage() {
         </div>
         <Link
           href="/onboarding/chef"
-          className="shrink-0 inline-flex items-center gap-2 py-3 px-6 rounded-full bg-gradient-to-r from-tertiary to-tertiary-dim text-white font-headline font-semibold hover:brightness-110 active:scale-[0.98] transition-all"
+          className="shrink-0 inline-flex items-center gap-2 py-3 px-6 rounded-full bg-linear-to-r from-tertiary to-tertiary-dim text-white font-headline font-semibold hover:brightness-110 active:scale-[0.98] transition-all"
           style={{ boxShadow: "0 4px 14px rgba(129,81,0,0.2)" }}
         >
           <Icon name="restaurant" size={20} />
@@ -58,14 +58,14 @@ export default function FoodMarketplacePage() {
           >
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-2/5 h-56 md:h-auto relative bg-surface-container">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent z-10" />
                 <div className="absolute top-4 left-4 z-20">
                   <span className="bg-tertiary-container text-on-tertiary-container text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
                     <Icon name="local_fire_department" filled size={14} />
                     Featured Today
                   </span>
                 </div>
-                <div className="w-full h-full bg-gradient-to-br from-tertiary/20 to-tertiary-container/20 flex items-center justify-center text-tertiary">
+                <div className="w-full h-full bg-linear-to-br from-tertiary/20 to-tertiary-container/20 flex items-center justify-center text-tertiary">
                   <Icon name="restaurant" size={64} className="opacity-30" />
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function FoodMarketplacePage() {
               className="group bg-surface-container-lowest rounded-2xl overflow-hidden hover:translate-y-[-2px] transition-all duration-300"
             >
               <div className="h-44 relative bg-surface-container overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-tertiary/10 to-tertiary-container/10 flex items-center justify-center text-tertiary">
+                <div className="w-full h-full bg-linear-to-br from-tertiary/10 to-tertiary-container/10 flex items-center justify-center text-tertiary">
                   <Icon name="restaurant" size={48} className="opacity-20 group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="absolute top-3 right-3">
