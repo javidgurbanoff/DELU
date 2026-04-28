@@ -66,8 +66,8 @@ export default function ItemDetailPage({
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
         {/* Image Area */}
         <div className="w-full lg:w-3/5">
-          <div className="bg-surface-container-lowest rounded-2xl overflow-hidden relative aspect-[4/3]">
-            <div className="w-full h-full bg-gradient-to-br from-tertiary/10 to-tertiary-container/10 flex items-center justify-center text-tertiary">
+          <div className="bg-surface-container-lowest rounded-2xl overflow-hidden relative aspect-4/3">
+            <div className="w-full h-full bg-linear-to-br from-tertiary/10 to-tertiary-container/10 flex items-center justify-center text-tertiary">
               <Icon name="restaurant" size={80} className="opacity-20" />
             </div>
             {/* Badges */}
@@ -163,7 +163,7 @@ export default function ItemDetailPage({
           <div className="space-y-3 pt-2">
             <button
               onClick={handleAddToCart}
-              className="w-full py-4 rounded-full bg-gradient-to-r from-primary to-primary-dim text-white font-headline font-semibold text-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-full bg-linear-to-r from-primary to-primary-dim text-white font-headline font-semibold text-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
               style={{ boxShadow: "0 4px 14px rgba(0,105,71,0.2)" }}
             >
               <Icon name="shopping_cart" />
